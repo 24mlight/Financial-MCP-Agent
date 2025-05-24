@@ -40,14 +40,19 @@
    ```
    poetry install
    ```
+   ```bash
+    cp .env.example .env
+   ```
+
+或者手动将 `.env.example` 文件改名为 `.env` 
 
 2. 设置环境变量（.env 文件）：
 
-   ```
-   OPENAI_COMPATIBLE_API_KEY=your_api_key
-   OPENAI_COMPATIBLE_BASE_URL=your_base_url
-   OPENAI_COMPATIBLE_MODEL=your_model
-   ```
+```
+OPENAI_COMPATIBLE_API_KEY=your_api_key
+OPENAI_COMPATIBLE_BASE_URL=your_base_url
+OPENAI_COMPATIBLE_MODEL=your_model
+```
 
 3. 配置 MCP 服务器：
 
@@ -60,7 +65,7 @@
            "args": [
                "run",  # uv run命令
                "--directory",
-               r"路径/到/a_share_mcp",  # 修改为您的MCP服务器项目路径
+               r"a_share_mcp项目的绝对路径",  # 修改为您已部署好的MCP服务器项目路径，如未部署好，请git clone https://github.com/24mlight/a-share-mcp-is-just-i-need.git， 然后部署
                "python",  # 在uv中运行的命令
                "mcp_server.py"  # MCP服务器脚本
            ],
@@ -98,6 +103,35 @@ poetry run python -m src.main
 ```
 
 系统会显示优美的欢迎界面和使用指南，然后等待您输入查询。
+
+**系统界面展示：**
+
+```
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                                                                              ║
+║      ███████╗██╗███╗   ██╗ █████╗ ███╗   ██╗ ██████╗██╗ █████╗ ██╗          ║
+║      ██╔════╝██║████╗  ██║██╔══██╗████╗  ██║██╔════╝██║██╔══██╗██║          ║
+║      █████╗  ██║██╔██╗ ██║███████║██╔██╗ ██║██║     ██║███████║██║          ║
+║      ██╔══╝  ██║██║╚██╗██║██╔══██║██║╚██╗██║██║     ██║██╔══██║██║          ║
+║      ██║     ██║██║ ╚████║██║  ██║██║ ╚████║╚██████╗██║██║  ██║███████╗      ║
+║      ╚═╝     ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝╚═╝╚═╝  ╚═╝╚══════╝      ║
+║                                                                              ║
+║                █████╗  ██████╗ ███████╗███╗   ██╗████████╗                  ║
+║               ██╔══██╗██╔════╝ ██╔════╝████╗  ██║╚══██╔══╝                  ║
+║               ███████║██║  ███╗█████╗  ██╔██╗ ██║   ██║                     ║
+║               ██╔══██║██║   ██║██╔══╝  ██║╚██╗██║   ██║                     ║
+║               ██║  ██║╚██████╔╝███████╗██║ ╚████║   ██║                     ║
+║               ╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝  ╚═══╝   ╚═╝                     ║
+║                                                                              ║
+║                          🏦 金融分析智能体系统                              ║
+║                     Financial Analysis AI Agent System                      ║
+║                                                                              ║
+║    ┌─────────────────────────────────────────────────────────────────┐     ║
+║    │  📊 基本面分析  │  📈 技术分析  │  💰 估值分析  │  🤖 智能总结  │     ║
+║    └─────────────────────────────────────────────────────────────────┘     ║
+║                                                                              ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+```
 
 **支持的自然语言查询示例：**
 
@@ -150,7 +184,9 @@ financial_agent/
 ├── .env              # 环境变量
 └── README.md         # 说明文档
 ```
-## 关于terminal打印的信息
+
+## 关于 terminal 打印的信息
+
 ```bash
 Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x00000217922E20C0>
 Traceback (most recent call last):
@@ -166,4 +202,5 @@ Traceback (most recent call last):
     raise RuntimeError('Event loop is closed')
 RuntimeError: Event loop is closed
 ```
-上述error可以忽略，这是由于异步执行未能正确关闭。不影响系统运行，可以忽视。
+
+上述 error 可以忽略，这是由于异步执行未能正确关闭。不影响系统运行，可以忽视。
