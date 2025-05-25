@@ -1,4 +1,4 @@
-# 金融分析 Agent 系统
+
 
 <div align="center">
 
@@ -117,45 +117,6 @@
 ## 🚀 使用方法
 
 ### 环境设置
-
-<div align="center">
-<table>
-  <tr>
-    <th>步骤</th>
-    <th>命令/操作</th>
-  </tr>
-  <tr>
-    <td><b>1. 安装依赖</b></td>
-    <td>
-      
-```bash
-poetry install
-```
-
-```bash
-cp .env.example .env
-```
-
-    </td>
-
-  </tr>
-  <tr>
-    <td><b>2. 配置环境变量</b></td>
-    <td>
-      
-```
-OPENAI_COMPATIBLE_API_KEY=your_api_key
-OPENAI_COMPATIBLE_BASE_URL=your_base_url
-OPENAI_COMPATIBLE_MODEL=your_model
-```
-    </td>
-  </tr>
-  <tr>
-    <td><b>3. 配置 MCP 服务器</b></td>
-    <td>编辑 <code>src/tools/mcp_config.py</code> 文件</td>
-  </tr>
-</table>
-</div>
 
 1. 安装依赖：
 
